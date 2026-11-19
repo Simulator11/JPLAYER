@@ -1,0 +1,40 @@
+name: jplayer
+description: "JPlayer - Your Music, Your Way. A free, ad-free, offline-first music player for Android."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.14.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^3.5.0
+  just_audio: ^0.10.6
+  audio_service: ^0.18.19
+  audio_session: ^0.2.4
+  sqflite: ^2.4.6
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  permission_handler: ^13.0.2
+  material_color_utilities: ^0.13.0
+  video_player: ^2.14.1
+  file_picker: ^13.4.0
+  material_ui: ^1.11.1
+  url_launcher: ^6.3.3
+
+# path_provider_android 2.3.x pulls in a JNI native module that requires a
+# specific NDK revision. The 2.2.x line provides the same platform channels
+# without native code, which keeps JPlayer's build lightweight.
+dependency_overrides:
+  path_provider_android: 2.2.23
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
